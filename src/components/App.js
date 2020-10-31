@@ -47,26 +47,30 @@ function App()
 	//Please do not alter the functional component as tests depend on the type of component.
 	<textarea id="task" ref={task} rows="4" cols="50"></textarea>
 	<button id="btn" onClick={saveTask}>save</button>
-	<ol>
+	<div>
 		{
 			tasks.map(task => (
-				<li key={task.id}>
-					<span   className="list">{task.name}</span>
-					<button className="delete" onClick={() => deleteTask(task.id)}>delete</button>
-					<button className="edit" onClick={() => edit(task.id)}>edit</button>
-					{
-						selectedTask === task.id ? 
-						<>
-						<textarea ref={editedTask} className="editTask" rows="4" cols="50"></textarea>
-						<button className="saveTask" onClick={() => editTask(task.id)}>save</button>
-						</>
-						:
-						null
-					}
-				</li>
+				<div  key={task.id}>
+					<div className="list">
+						{task.name}
+					</div>
+					<div>
+						<button className="delete" onClick={() => deleteTask(task.id)}>delete</button>
+						<button className="edit" onClick={() => edit(task.id)}>edit</button>
+						{
+							selectedTask === task.id ? 
+							<>
+							<textarea ref={editedTask} className="editTask" rows="4" cols="50"></textarea>
+							<button className="saveTask" onClick={() => editTask(task.id)}>save</button>
+							</>
+							:
+							null
+						}
+					</div>
+				</div>
 			))
 		}
-	</ol>
+	</div>
 	</div>
 	);
 }
