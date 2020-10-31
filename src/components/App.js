@@ -50,8 +50,8 @@ function App()
 	<ol>
 		{
 			tasks.map(task => (
-				<li key={task.id}  className="list">
-					<span>{task.name}</span>
+				<li key={task.id}>
+					<span   className="list">{task.name}</span>
 					<button className="delete" onClick={() => deleteTask(task.id)}>delete</button>
 					<button className="edit" onClick={() => edit(task.id)}>edit</button>
 					{
