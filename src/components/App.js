@@ -47,7 +47,7 @@ function App()
 	//Please do not alter the functional component as tests depend on the type of component.
 	<textarea id="task" ref={task} rows="4" cols="50"></textarea>
 	<button id="btn" onClick={saveTask}>save</button>
-	<ol>
+	<ol className="list">
 		{
 			tasks.map(task => (
 				<li key={task.id}>
